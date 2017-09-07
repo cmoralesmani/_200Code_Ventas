@@ -3,6 +3,7 @@
 namespace _200Code_Ventas\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use _200Code_Ventas\Categoria;
 use _200Code_Ventas\Http\Requests;
@@ -23,7 +24,7 @@ class CategoriaController extends Controller
             ->orderBy('id_categoria','desc')
             ->paginate(7);
             return view('almacen.categoria.index',[
-                "categroia" => $categorias,
+                "categorias" => $categorias,
                 "searchText" => $query
             ]);
         }
