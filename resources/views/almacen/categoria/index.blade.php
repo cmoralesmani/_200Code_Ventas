@@ -28,9 +28,10 @@
                     <td>{{ $cat->descripcion }}</td>
                     <td>
                         <a href="{{ action('CategoriaController@edit',$cat->id_categoria) }}"><button class="btn btn-info">Editar</button></a>
-                        <a href=""><button class="btn btn-danger">Eliminar</button></a>
+                        <a href="" data-target="#modal-delete-{{ $cat->id_categoria }}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
                     </td>
                 </tr>
+                @include('almacen.categoria.modal')
                 @endforeach
             </table>
         </div>
