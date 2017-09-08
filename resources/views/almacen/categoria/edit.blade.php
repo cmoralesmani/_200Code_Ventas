@@ -16,8 +16,9 @@
                 </div>
             @endif
 
-            <form action="{{ URL::action('CategoriaController@update',[ 'id' => $categoria->id_categoria]) }}"  method="patch" autocomplete="off">
+            <form method="post" action="{{ action('CategoriaController@update',$categoria->id_categoria) }}" autocomplete="off">
                 {{ csrf_field() }}
+                <input type="hidden" name="_method" value="PATCH"/>
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" class="form-control" placeholder="Nombre..." value="{{ $categoria->nombre }}">
