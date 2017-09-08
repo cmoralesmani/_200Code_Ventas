@@ -16,5 +16,5 @@ class Categoria extends Model
         'condicion'
     ];
 
-    protecte $guarded = [];
+    protected $guarded = [];
 }

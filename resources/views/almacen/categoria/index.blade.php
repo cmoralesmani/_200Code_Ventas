@@ -3,9 +3,11 @@
 @section('contenido')
 <div class="row">
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-        <h3>Listado de Categorias <a href="categoria/create">
+        <h3>Listado de Categorias
+            <a href="{{ url('almacen/categoria/create') }}">
                 <button class="btn btn-success">Nuevo</button>
-            </a></h3>
+            </a>
+        </h3>
         @include('almacen.categoria.search')
     </div>
 </div>
@@ -25,7 +27,7 @@
                     <td>{{ $cat->nombre }}</td>
                     <td>{{ $cat->descripcion }}</td>
                     <td>
-                        <a href=""><button class="btn btn-info">Editar</button></a>
+                        <a href="{{ URL::action('CategoriaController@edit',$cat->id_categoria) }}"><button class="btn btn-info">Editar</button></a>
                         <a href=""><button class="btn btn-danger">Eliminar</button></a>
                     </td>
                 </tr>
